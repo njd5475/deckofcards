@@ -6,4 +6,5 @@ public interface Dealable {
 	
 	public Card dealOneCard();
 	
+	public Card peekTopCard();
 }
