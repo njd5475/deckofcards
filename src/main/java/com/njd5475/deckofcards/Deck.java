@@ -8,6 +8,8 @@ import java.util.Random;
 /**
  * This is a simple implementation of a dealable deck of cards. The deck is
  * defined by a set of cards which are created from an
+ * 
+ * @author njd5475
  */
 public class Deck implements Dealable {
 
