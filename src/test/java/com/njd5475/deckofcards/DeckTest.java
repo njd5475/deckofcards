@@ -34,6 +34,7 @@ public class DeckTest {
 
 		Card card = deck.dealOneCard();
 		assertNull(card);
+		assertNull(deck.peekTopCard());
 	}
 
 }
