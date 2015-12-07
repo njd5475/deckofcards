@@ -8,4 +8,4 @@ Simply instantiate a new Deck using either the enums Suit, and Face or build arr
 		Deck = new Deck(Suit.values(), new Face[]{Ace, King, Queen, Jack, Ten, Nine, Ace, King, Queen, Jack, Ten, Nine});
 
 # Limitations and Future implementation
-The library currently only defines a Dealable deck. There are no capabilities for returning cards to a Dealable implementation. There migh be an additional implementation of a Redealable deck. Possibly creating an interface for a discard pile, something like ReplaceableDeck. Or make another Dealable implementation that recreates the deck with subsequent call to shuffle after all cards have been dealt.
+The library currently only defines a Dealable deck. There are no capabilities for returning cards to a Dealable implementation. In the future there might be an additional implementation of a Redealable deck. Another possibility would be creating an interface for a discard pile. Perhaps something like ReplaceableDeck. Or this implementation could be modified so that a subsequent call to shuffle after all cards have been dealt would recreate the cards.
