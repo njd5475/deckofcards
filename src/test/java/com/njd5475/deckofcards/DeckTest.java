@@ -8,6 +8,9 @@ import static com.njd5475.deckofcards.Face.Queen;
 import static com.njd5475.deckofcards.Face.Ten;
 import static org.junit.Assert.*;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 import java.util.Random;
 
 import org.junit.Before;
@@ -55,5 +58,25 @@ public class DeckTest {
 			assertNotNull(pinochleDeck.dealOneCard());
 		}
 		assertNull(pinochleDeck.dealOneCard());
+	}
+	
+	@Test
+	public void testDeckMakeUp() {
+		Map<Suit, LinkedList<Face>> makeUp = new HashMap<Suit, LinkedList<Face>>();
+		
+		Card card = null;
+		while((card = deck.dealOneCard()) != null) {
+			LinkedList<Face> faces = makeUp.get(card.getSuit());
+			if(faces == null) {
+				faces = new LinkedList<Face>();
+				makeUp.put(card.getSuit(), faces);
+			}
+			faces.add(card.getFace());
+		}
+		
+		assertEquals(4, makeUp.keySet().size());
+		for(Suit suit : Suit.values()) {
+			assertEquals(13, makeUp.get(suit).size());
+		}
 	}
 }
